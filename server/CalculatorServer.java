@@ -11,19 +11,19 @@ public class CalculatorServer extends UnicastRemoteObject implements CalculatorS
         super();
     }
 
-    public double add(double a, double b) {
+    public int add(int a, int b) {
         return a + b;
     }
 
-    public double subtract(double a, double b) {
+    public int subtract(int a, int b) {
         return a - b;
     }
 
-    public double multiply(double a, double b) {
+    public int multiply(int a, int b) {
         return a * b;
     }
 
-    public double divide(double a, double b) throws RemoteException {
+    public int divide(int a, int b) throws RemoteException {
         if (b == 0) {
             throw new RemoteException("Cannot divide by zero");
         }

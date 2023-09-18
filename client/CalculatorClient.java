@@ -16,13 +16,13 @@ public class CalculatorClient {
 
             while (true) {
                 // Solicitar al usuario que elija una operaci贸n
-                System.out.println("Elija una operaci贸n:");
+                System.out.println("Elija una operaci髇:");
                 System.out.println("1. Suma");
                 System.out.println("2. Resta");
-                System.out.println("3. Multiplicaci贸n");
-                System.out.println("4. Divisi贸n");
+                System.out.println("3. Multiplicaci髇");
+                System.out.println("4. Divisi髇");
                 System.out.println("5. Salir");
-                System.out.print("Ingrese el n煤mero de la operaci贸n deseada: ");
+                System.out.print("Ingrese el n鷐ero de la operaci髇 deseada: ");
                 int choice = scanner.nextInt();
 
                 if (choice == 5) {
@@ -30,15 +30,15 @@ public class CalculatorClient {
                     break;
                 }
 
-                // Solicitar al usuario que ingrese dos n煤meros
-                System.out.print("Ingrese el primer n煤mero: ");
-                double num1 = scanner.nextDouble();
-                System.out.print("Ingrese el segundo n煤mero: ");
-                double num2 = scanner.nextDouble();
+                // Solicitar al usuario que ingrese dos n鷐eros
+                System.out.print("Ingrese el primer n鷐ero: ");
+                int num1 = (int) scanner.nextDouble();
+                System.out.print("Ingrese el segundo n鷐ero: ");
+                int num2 = (int) scanner.nextDouble();
 
-                double result = 0;
+                int result = 0;
 
-                // Realizar la operaci贸n elegida por el usuario
+                // Realizar la operaci髇 elegida por el usuario
                 switch (choice) {
                     case 1:
                         result = calculator.add(num1, num2);
@@ -58,7 +58,7 @@ public class CalculatorClient {
                         }
                         break;
                     default:
-                        System.out.println("Opci贸n no v谩lida.");
+                        System.out.println("Opci髇 no v谩lida.");
                         continue;
                 }
 
@@ -66,7 +66,7 @@ public class CalculatorClient {
                 System.out.println("Resultado: " + result);
             }
 
-            // Cerrar el esc谩ner
+            // Cerrar el escaner
             scanner.close();
 
         } catch (Exception e) {
