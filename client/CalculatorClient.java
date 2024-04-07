@@ -6,39 +6,48 @@ import java.util.Scanner;
 import shared.CalculatorService;
 
 public class CalculatorClient {
+    /**
+     * Main method of the client. It connects to the remote object
+     * and starts the calculation process.
+     *
+     * @param args Not used
+     */
     public static void main(String[] args) {
         try {
-            // Obtener una referencia al objeto remoto en el servidor
+            // Lookup the remote object
             CalculatorService calculator = (CalculatorService) Naming.lookup("rmi://localhost/CalculatorService");
 
-            // Configurar un objeto Scanner para la entrada del usuario
+            // Create a new Scanner to read user input
             Scanner scanner = new Scanner(System.in);
 
+            // Main loop
             while (true) {
-                // Solicitar al usuario que elija una operaciÃ³n
-                System.out.println("Elija una operación:");
-                System.out.println("1. Suma");
-                System.out.println("2. Resta");
-                System.out.println("3. Multiplicación");
-                System.out.println("4. División");
-                System.out.println("5. Salir");
-                System.out.print("Ingrese el número de la operación deseada: ");
+                System.out.println("Choose an operation:");
+                System.out.println("1. Addition");
+                System.out.println("2. Subtraction");
+                System.out.println("3. Multiplication");
+                System.out.println("4. Division");
+                System.out.println("5. Exit");
+                System.out.print("Enter the number of the desired operation: ");
+
+                // Read the user choice
                 int choice = scanner.nextInt();
 
+                // Exit if the user wants to
                 if (choice == 5) {
-                    System.out.println("Saliendo del cliente.");
+                    System.out.println("Exiting the client.");
                     break;
                 }
 
-                // Solicitar al usuario que ingrese dos números
-                System.out.print("Ingrese el primer número: ");
+                // Read the two numbers
+                System.out.print("Enter the first number: ");
                 int num1 = (int) scanner.nextDouble();
-                System.out.print("Ingrese el segundo número: ");
+                System.out.print("Enter the second number: ");
                 int num2 = (int) scanner.nextDouble();
 
                 int result = 0;
 
-                // Realizar la operación elegida por el usuario
+                // Perform the operation
                 switch (choice) {
                     case 1:
                         result = calculator.add(num1, num2);
@@ -53,24 +62,25 @@ public class CalculatorClient {
                         if (num2 != 0) {
                             result = calculator.divide(num1, num2);
                         } else {
-                            System.out.println("No se puede dividir por cero.");
+                            System.out.println("Can't divide by zero.");
                             continue;
                         }
                         break;
                     default:
-                        System.out.println("Opción no vÃ¡lida.");
+                        System.out.println("Invalid operation.");
                         continue;
                 }
 
-                // Mostrar el resultado al usuario
-                System.out.println("Resultado: " + result);
+                // Print the result
+                System.out.println("Result: " + result);
             }
 
-            // Cerrar el escaner
+            // Close the scanner
             scanner.close();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
