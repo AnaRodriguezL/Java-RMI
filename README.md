@@ -1,16 +1,24 @@
-# Java Remote Method Invocation (RMI) 🔍
+<h1 align="center">🔍 Java Remote Method Invocation (RMI) </h1>
 
-This project provides you with an implementation of RMI in Java, a technology that allows you to communicate between distributed Java processes on different systems 🌐
+This project provides you with an implementation of RMI in Java, a technology that allows you to communicate between distributed Java processes on different systems.
+
+<br>
 
 ## 📝 Requirements
-- JDK (Java Development Kit) installed on your system ☕
-- Basic knowledge of Java and object-oriented programming 📚
-- An IDE (Integrated Development Environment) such as Eclipse or IntelliJ IDEA may be helpful but not mandatory 💻
+☕ JDK (Java Development Kit) installed on your system.
+<br>
+📚 Basic knowledge of Java and object-oriented programming.
+<br>
+💻 An IDE (Integrated Development Environment) such as Eclipse or IntelliJ IDEA may be helpful but not mandatory.
+
+<br>
 
 ## ⚙️ Configuration
 Ensure you have the JDK installed on your system.
 Clone or download this repository to your local machine.
 Open the project in your preferred IDE.
+
+<br>
 
 ## 🔧 Usage
 This project is divided into three main parts:
@@ -36,6 +44,8 @@ java RemoteServer
 ```bash
 java RemoteClient
 ```
+
+<br>
 
 ## 📄 License
 This project is licensed under the MIT License. Feel free to use and modify it according to your needs.
